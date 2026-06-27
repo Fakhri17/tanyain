@@ -2,9 +2,11 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuth } from '@/composables/useAuth'
+import { useToast } from '@/composables/useToast'
 
 const router = useRouter()
 const { register } = useAuth()
+const toast = useToast()
 
 const email = ref('')
 const password = ref('')
@@ -58,6 +60,7 @@ async function handleSubmit() {
   error.value = ''
   try {
     await register(email.value, password.value, username.value, displayName.value.trim())
+    toast.success('Akun berhasil dibuat!')
     router.push('/dashboard')
   } catch (e: unknown) {
     error.value = e instanceof Error ? e.message : 'Terjadi kesalahan'

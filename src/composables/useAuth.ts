@@ -4,8 +4,9 @@ import type { User } from '@supabase/supabase-js'
 
 const user = ref<User | null>(null)
 
-supabase.auth.getUser().then(({ data }) => {
-  user.value = data.user
+// getSession reads from localStorage cache (fast), no network call
+supabase.auth.getSession().then(({ data }) => {
+  user.value = data.session?.user ?? null
 })
 
 supabase.auth.onAuthStateChange((_event, session) => {

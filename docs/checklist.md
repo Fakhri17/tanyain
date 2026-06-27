@@ -43,35 +43,35 @@ Progress pengerjaan berdasarkan `docs/plans.md`. Tandai `[x]` jika step sudah se
 
 ---
 
-## STEP 4 — Halaman publik penanya (`/inbox/:username`)
+## STEP 4 — Halaman publik penanya (`/inbox/:username`) ✅
 
-- [ ] Fetch profil pemilik inbox by username (+ handle 404 / not public)
-- [ ] Tampilkan display_name, bio, jumlah pertanyaan dijawab
-- [ ] Form kirim pertanyaan anonim (textarea, counter, honeypot, validasi)
-- [ ] Pesan sukses + reset form (tanpa redirect)
-- [ ] Tampilkan daftar pertanyaan + jawaban (status `answered`)
-- [ ] Submit pakai anon client, tanpa data sender
-
----
-
-## STEP 5 — Dashboard pemilik inbox
-
-- [ ] Layout dashboard (tab: Pertanyaan Masuk & Pengaturan Profil)
-- [ ] Fetch questions milik user + join answers
-- [ ] Filter tab: Semua | Pending | Sudah Dijawab
-- [ ] Card pertanyaan (body, status badge, waktu)
-- [ ] Aksi: Jawab / Sembunyikan / Tampilkan Lagi
-- [ ] Section Pengaturan Profil (update display_name, bio, is_public + copy link)
-- [ ] Realtime subscribe (opsional)
+- [x] Fetch profil pemilik inbox by username (+ handle 404 / not public)
+- [x] Tampilkan display_name, bio
+- [x] Form kirim pertanyaan anonim (textarea, counter, honeypot, validasi)
+- [x] Pesan sukses + reset form (tanpa redirect)
+- [x] Submit pakai anon client, tanpa data sender
+- ~~Tampilkan daftar pertanyaan + jawaban~~ — dihapus, sesuai model NGL (Q&A tidak publik)
 
 ---
 
-## STEP 6 — Polish & deploy ke Netlify
+## STEP 5 — Dashboard pemilik inbox ✅
 
-- [ ] `netlify.toml` (build + SPA redirect)
-- [ ] `src/components/AppNavbar.vue`
-- [ ] Halaman Home (deskripsi + CTA + redirect jika login)
-- [ ] `useToast.ts` + dipakai di semua form
-- [ ] Loading states (semua submit + skeleton/spinner)
-- [ ] Env vars di Netlify
+- [x] Layout dashboard (tab: Pertanyaan Masuk & Pengaturan Profil)
+- [x] Fetch questions milik user + join answers
+- [x] Filter tab: Semua | Pending | Sudah Dijawab
+- [x] Card pertanyaan (body, status badge, waktu)
+- [x] Aksi: Jawab / Sembunyikan / Tampilkan Lagi
+- [x] Section Pengaturan Profil (update display_name, bio, is_public + copy link)
+- [x] Realtime subscribe (opsional)
+
+---
+
+## STEP 6 — Polish & deploy ke Netlify ✅
+
+- [x] `netlify.toml` (build + SPA redirect)
+- [x] `src/components/AppNavbar.vue`
+- [x] Halaman Home (deskripsi + CTA + redirect jika login)
+- [x] `useToast.ts` + dipakai di semua form
+- [x] Loading states (semua submit + skeleton/spinner)
+- [ ] Env vars di Netlify (manual — isi di Netlify dashboard)
 - [ ] Verifikasi akhir (build, route langsung, anon submit, proteksi dashboard, RLS)

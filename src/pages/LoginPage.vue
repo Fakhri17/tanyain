@@ -2,9 +2,11 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuth } from '@/composables/useAuth'
+import { useToast } from '@/composables/useToast'
 
 const router = useRouter()
 const { login } = useAuth()
+const toast = useToast()
 
 const email = ref('')
 const password = ref('')
@@ -16,6 +18,7 @@ async function handleSubmit() {
   error.value = ''
   try {
     await login(email.value, password.value)
+    toast.success('Berhasil masuk!')
     router.push('/dashboard')
   } catch (e: unknown) {
     error.value = e instanceof Error ? e.message : 'Email atau password salah'
