@@ -18,16 +18,18 @@ Progress pengerjaan berdasarkan `docs/plans.md`. Tandai `[x]` jika step sudah se
 
 ---
 
-## STEP 2 — Setup database Supabase
+## STEP 2 — Setup database Supabase ✅
 
-- [ ] SQL migration: tabel `profiles`
-- [ ] SQL migration: tabel `questions` (tanpa `sender_id` — anonim)
-- [ ] SQL migration: tabel `answers`
-- [ ] RLS policies: `profiles`
-- [ ] RLS policies: `questions`
-- [ ] RLS policies: `answers`
-- [ ] Trigger `handle_new_user` (auto-create profil)
-- [ ] Index pada `questions(inbox_owner_id)` dan `questions(status)`
+- [x] SQL migration: tabel `profiles`
+- [x] SQL migration: tabel `questions` (tanpa `sender_id` — anonim)
+- [x] SQL migration: tabel `answers`
+- [x] RLS policies: `profiles`
+- [x] RLS policies: `questions`
+- [x] RLS policies: `answers`
+- [x] Trigger `handle_new_user` (auto-create profil)
+- [x] Index pada `questions(inbox_owner_id)` dan `questions(status)`
+
+> File: `supabase/migrations/0001_init_schema.sql` — paste ke Supabase SQL Editor lalu Run.
 
 ---
 
