@@ -28,7 +28,7 @@ Langkah yang harus dilakukan:
    - vue-router
    - tailwindcss
 3. Setup Tailwind CSS sesuai dokumentasi resmi untuk Vite + Vue
-4. Buat file src/lib/supabase.js yang mengekspos supabase client menggunakan createClient dari @supabase/supabase-js. Gunakan import.meta.env.VITE_SUPABASE_URL dan import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
+4. Buat file src/lib/supabase.ts yang mengekspos supabase client menggunakan createClient dari @supabase/supabase-js. Gunakan import.meta.env.VITE_SUPABASE_URL dan import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
 5. Buat file .env.local dengan placeholder:
    VITE_SUPABASE_URL=your-project-url
    VITE_SUPABASE_PUBLISHABLE_KEY=your-key
@@ -126,7 +126,7 @@ Halaman Login (/login):
 - Redirect ke /dashboard setelah sukses
 - Tampilkan error jika credentials salah
 
-Buat composable src/composables/useAuth.js yang mengekspos:
+Buat composable src/composables/useAuth.ts yang mengekspos:
 - user (reactive, dari supabase.auth.getUser())
 - login(email, password)
 - register(email, password, username, displayName)
@@ -249,7 +249,7 @@ Selesaikan semua hal berikut sebelum deploy:
    - Jika sudah login, redirect langsung ke /dashboard
 
 4. Error handling global:
-   - Buat composable useToast.js sederhana untuk tampilkan notifikasi sukses/error
+   - Buat composable useToast.ts sederhana untuk tampilkan notifikasi sukses/error
    - Gunakan di semua form (register, login, submit pertanyaan, jawab pertanyaan)
 
 5. Loading states:
