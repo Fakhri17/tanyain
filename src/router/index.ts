@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { supabase } from '@/lib/supabase'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +23,7 @@ const router = createRouter({
       path: '/dashboard',
       name: 'dashboard',
       component: () => import('@/pages/DashboardPage.vue'),
+      meta: { requiresAuth: true },
     },
     {
       path: '/inbox/:username',
@@ -29,6 +31,15 @@ const router = createRouter({
       component: () => import('@/pages/InboxPage.vue'),
     },
   ],
+})
+
+router.beforeEach(async (to) => {
+  if (!to.meta.requiresAuth) return true
+
+  const { data } = await supabase.auth.getUser()
+  if (!data.user) return { name: 'login' }
+
+  return true
 })
 
 export default router

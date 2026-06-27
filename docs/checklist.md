@@ -33,13 +33,13 @@ Progress pengerjaan berdasarkan `docs/plans.md`. Tandai `[x]` jika step sudah se
 
 ---
 
-## STEP 3 — Auth: Register & Login
+## STEP 3 — Auth: Register & Login ✅
 
-- [ ] Halaman Register (`/register`) + validasi client-side
-- [ ] Halaman Login (`/login`)
-- [ ] Composable `src/composables/useAuth.ts`
-- [ ] Navigation guard: `/dashboard` butuh login
-- [ ] Styling Tailwind (clean & functional)
+- [x] Halaman Register (`/register`) + validasi client-side
+- [x] Halaman Login (`/login`)
+- [x] Composable `src/composables/useAuth.ts`
+- [x] Navigation guard: `/dashboard` butuh login
+- [x] Styling Tailwind (clean & functional)
 
 ---
 
